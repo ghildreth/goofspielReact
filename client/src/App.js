@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Cards from './Cards';
 
 class App extends Component {
   state = {
-    response: ''
+    response: '',
+    deckOfCards: ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king' ],
   };
 
   componentDidMount() {
@@ -26,10 +28,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to Goofspiel</h1>
         </header>
         <p className="App-intro">{this.state.repsonse}</p>
+        <Cards deckOfCards={this.state.deckOfCards}/>
       </div>
+      
+  
     );
   }
 }
