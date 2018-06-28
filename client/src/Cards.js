@@ -21,9 +21,12 @@ class Cards extends Component {
         const suitedCardsP1 = this.props.deckOfCards.map(card => <img src={"/cards/" + card + "_of_" + player1Hand.toLowerCase() + ".png"} alt="cards" />)
         const suitedCardsP2 = this.props.deckOfCards.map(card => <img src={"/cards/" + card + "_of_" + player2Hand.toLowerCase() + ".png"} alt="cards" />)
         console.log(this.state.suit)
+        const prizeDeck = this.props.deckOfCards.map(card => <img src={"/cards/" + card + "_of_" + this.state.suit[0].toLowerCase() + ".png"} alt="cards"/>)
+        // const prizePool = this.props.deckOfCards.map(card)
         return (
-            <div>
+            <div className="Board">
             <div className="Player1">{suitedCardsP1}</div>
+            <div className="PrizePool">{prizeDeck}</div>
             <div className="Player2">{suitedCardsP2}</div>
             </div>
         );
